@@ -382,15 +382,11 @@ extern int ksu_handle_vfs_read(struct file **file_ptr, char __user **buf_ptr,
 	if (unlikely(ksu_vfs_read_hook))
 		ksu_handle_vfs_read(&file, &buf, &count, &pos);
 
- 	if (!(file->f_mode & FMODE_READ))
- 		return -EBADF;
- 	if (!(file->f_mode & FMODE_CAN_READ))
-
 	if (!(file->f_mode & FMODE_READ))
 		return -EBADF;
 	if (!file->f_op || (!file->f_op->read && !file->f_op->aio_read))
 		return -EINVAL;
-	if (unlikely(!access_ok(VERIFY_WRITE, buf, count)))
+	if (unlikely(!access_ok(VERIFY_WRITE, buf, count)))x
 		return -EFAULT;
 
 	ret = rw_verify_area(READ, file, pos, count);
