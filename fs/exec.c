@@ -822,8 +822,6 @@ int kernel_read(struct file *file, loff_t offset,
 	return result;
 }
 
-EXPORT_SYMBOL(kernel_read);
-
 ssize_t read_code(struct file *file, unsigned long addr, loff_t pos, size_t len)
 {
 	ssize_t res = file->f_op->read(file, (void __user *)addr, len, &pos);
