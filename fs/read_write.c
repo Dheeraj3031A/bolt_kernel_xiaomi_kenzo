@@ -386,7 +386,7 @@ extern int ksu_handle_vfs_read(struct file **file_ptr, char __user **buf_ptr,
 		return -EBADF;
 	if (!file->f_op || (!file->f_op->read && !file->f_op->aio_read))
 		return -EINVAL;
-	if (unlikely(!access_ok(VERIFY_WRITE, buf, count)))x
+	if (unlikely(!access_ok(VERIFY_WRITE, buf, count)))
 		return -EFAULT;
 
 	ret = rw_verify_area(READ, file, pos, count);
