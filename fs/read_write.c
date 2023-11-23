@@ -1267,3 +1267,5 @@ extern int ksu_handle_vfs_read(struct file **file_ptr, char __user **buf_ptr,
  	if (!(file->f_mode & FMODE_READ))
  		return -EBADF;
  	if (!(file->f_mode & FMODE_CAN_READ))
+ }
+
