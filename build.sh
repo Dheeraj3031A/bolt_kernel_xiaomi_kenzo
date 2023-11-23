@@ -36,10 +36,9 @@ echo -e "***********************************************"
 mkdir out
 make clean && make mrproper
 make O=out ARCH=arm64 kenzo_defconfig
-export KBUILD_BUILD_USER="genxinvenits"
+export KBUILD_BUILD_USER="genxinvenits X NotDheeraj06"
 export KBUILD_BUILD_HOST="oxiizen.com"
 export ARCH=arm64 && export SUBARCH=arm64 && export USE_CCACHE=1
-export CROSS_COMPILE=$HOME/Downloads/Android/TOOLS/gcc-linaro-6.5.0-2018.12-linux/bin/aarch64-linux-gnu-
 export CROSS_COMPILE_ARM32=$HOME/Downloads/Android/TOOLS/gcc-linaro-6.5.0-2018.12-linux/bin/arm-linux-gnueabi-
 make -j4 O=out kenzo_defconfig\ARCH=arm64
 
